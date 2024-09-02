@@ -13,7 +13,7 @@ def Onstart(extra_bundel):
     os.system("/usr/bin/mosquitto_pub -h 127.0.0.1 -t ch1/power -m 1")
     while 1:
         # print(b)
-        time.sleep(1)
+        time.sleep(3)
         random.random()
         pr1 = random.randint(0, 10)
         pr2 = random.randint(0, 10)
