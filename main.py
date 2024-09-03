@@ -10,6 +10,9 @@ def Onstart(extra_bundel):
     pr1_trigger = int(extra_bundel['remote_params']['pr1_trigger'])
     pr2_trigger = int(extra_bundel['remote_params']['pr2_trigger'])
     pr3_trigger = int(extra_bundel['remote_params']['pr3_trigger'])
+    os.system("/usr/bin/mosquitto_pub -h 127.0.0.1 -t ch1/remote_params -m " + str(pr1_trigger))
+    os.system("/usr/bin/mosquitto_pub -h 127.0.0.1 -t ch2/remote_params -m " + str(pr2_trigger))
+    os.system("/usr/bin/mosquitto_pub -h 127.0.0.1 -t ch3/remote_params -m " + str(pr3_trigger))
     os.system("/usr/bin/mosquitto_pub -h 127.0.0.1 -t ch1/power -m 1")
     while 1:
         # print(b)
